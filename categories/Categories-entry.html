@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entry Page</title>
+    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body bgcolor="#FF407D">
+    <div class="sidebar">
+      <nav>
+        <div class="logo-details">
+          <img
+            src="/assets/Black and White Letter J Logo .png"
+            alt="logo"
+            style="width: 100px"
+          />
+        </div>
+        <div class="tengah"><h1>Administrator</h1></div>
+        <div>
+          <ul class="nav-links">
+            <li><a class="btn_login" href="/admin.html">Dashboard</a></li>
+            <li>
+              <a class="btn_login" href="/categories/categories.html"
+                >Categories</a
+              >
+            </li>
+            <li>
+              <a class="btn_login" href="/transactions/transactions.html"
+                >Transaction</a
+              >
+            </li>
+            <li><a class="btn_login" onclick="keluar()">log-out</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <br />
+    <div class="jumbotron"><h2>Categories</h2></div>
+    <div class="containter">
+      <div class="form-login">
+        <h3>Input Categories</h3>
+        <label for="Merk PS">Merk PS</label>
+        <input
+          class="input"
+          type="text"
+          name="Merk PS"
+          id="Merk PS"
+          placeholder="Merk PS"
+        />
+        <label for="Sewa">Sewa</label>
+        <input
+          class="input"
+          type="text"
+          name="Sewa"
+          id="Sewa"
+          placeholder="Sewa"
+        />
+        <label for="Harga">Harga</label>
+        <input
+          class="input"
+          type="text"
+          name="Harga"
+          id="Harga"
+          placeholder="Harga"
+        />
+        <input class="btn_input" type="submit" name="kirim" value="Input" />
+      </div>
+    </div>
+    <script src="/js/javascript.js"></script>
+  </body>
+</html>
