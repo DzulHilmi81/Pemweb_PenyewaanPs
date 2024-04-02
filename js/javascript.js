@@ -8,7 +8,7 @@ let courses = [
 
 function renderCourses() {
   var coursesList = document.querySelector("#courses-list");
-  coursesList.innerHTML = "";
+  coursesList.innerHTML = " ";
 
   // Jika coursesList sudah memiliki anak-anak (data sudah ditampilkan), hapus anak-anaknya
   if (coursesList.children.length > 0) {
