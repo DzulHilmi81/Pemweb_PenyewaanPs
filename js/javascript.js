@@ -1,28 +1,31 @@
 let courses = [
-  { title: "Matematika SD", level: "Beginner" },
-  { title: "Matematika SD", level: "Intermediate" },
-  { title: "Matematika SMP", level: "Beginner" },
-  { title: "IPA SMA", level: "Intermediate" },
-  { title: "Matematika SMA", level: "Advanced" },
+  { title: "PS5", level: "1000000/Hari" },
+  { title: "PS3", level: "45000/Hari" },
+  { title: "PS4", level: "70000/Hari" },
+  { title: "PS5", level: "100000/hari" },
+  { title: "PS4", level: "70000/Hari" },
 ];
 
+var tampildata = false;
+// Membuat fungsi untuk menampilkan data list course ke dalam HTML
 function renderCourses() {
+  // Mencari elemen HTML dengan ID "courses-list"
   var coursesList = document.querySelector("#courses-list");
-  coursesList.innerHTML = " ";
+  coursesList.innerHTML = "";
 
-  // Jika coursesList sudah memiliki anak-anak (data sudah ditampilkan), hapus anak-anaknya
-  if (coursesList.children.length > 0) {
-    return;
+  tampildata = !tampildata;
+  if (tampildata) {
+    // Melakukan iterasi pada data list course dan menambahkannya ke dalam elemen HTML "courses-list"
+    for (var i = 0; i < courses.length; i++) {
+      var course = courses[i];
+      var courseElement = document.createElement("li");
+      courseElement.innerText = `${course.title} (Level: ${course.level})`;
+      coursesList.appendChild(courseElement);
+    }
+  } else {
+    coursesList.innerHTML = "";
   }
-
-  // Melakukan iterasi pada data list course dan menambahkannya ke dalam elemen HTML "courses-list"
-  courses.forEach(function (course) {
-    var courseElement = document.createElement("li");
-    courseElement.innerText = `${course.title} (Level: ${course.level})`;
-    coursesList.appendChild(courseElement);
-  });
 }
-
 const tomboltampil = document.querySelector("#tombol");
 tomboltampil.addEventListener("click", renderCourses);
 
@@ -30,5 +33,19 @@ function keluar() {
   var keluar = confirm("Apakah anda yakin ingin keluar?");
   if (keluar == true) {
     window.location = "index.html";
+  }
+}
+
+function done_transaction() {
+  var keluar = confirm("Apakah telah selesai input data?");
+  if (keluar == true) {
+    window.location = "transactions.html";
+  }
+}
+
+function done_categories() {
+  var keluar = confirm("Apakah telah selesai input data?");
+  if (keluar == true) {
+    window.location = "categories-entry.php";
   }
 }
