@@ -2,8 +2,8 @@
 
 $servername = 'localhost';
 $username = 'root';
-$password = '';
-$database = 'db_pendidikan_learning';
+$password = ''; //jika tidak ada password di kosongkan saja
+$database = 'db_catshop';
 
 // membuat koneksi
 $koneksi = mysqli_connect($servername, $username, $password, $database);

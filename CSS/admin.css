@@ -1,170 +1,248 @@
-.sidebar{
-    position: fixed;
-    height: 100%;
-	width: 200px;
-	background: #04d1f5a8;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+/* sidebar */
+.sidebar {
+	position: fixed;
+	height: 100%;
+	width: 240px;
+	background: #0d68ae; /* Warna coklat */
 	transition: all 0.5s ease;
-	display: flex; 
-	flex-direction: column;
 }
 
- .logo-details {
-	height: 50px;
+.sidebar.active {
+	width: 60px;
+}
+
+.sidebar .logo-details {
+	height: 80px;
 	display: flex;
 	align-items: center;
-	align-content: center;
-	justify-content: center;
-	border-bottom: #111111;
-	margin-bottom: 10px;
-	cursor: pointer;
 }
 
-.sidebar li {
-	text-align: center;
-	align-items: center;
-	list-style: none;
-	height: 100px;
-	width: 230px;
-}
-
-.sidebar .nav-links{
-	margin: 10px;
-	padding-inline-start: 0px;
-
-}
-
-.tengah{
+.sidebar .logo-details i {
+	font-size: 28px;
+	font-weight: 500;
+	color: #000000;
+	min-width: 60px;
 	text-align: center;
 }
 
-.btn_login {
-	align-items: center;
-	justify-content: center;
-	display: flex; 
-	background-color: #2b5dff;
-	width: 78%;
-	height: 50px;
-	border-radius: 10px;
-	border: none;
-	cursor: pointer;
-	color: white;
-    text-decoration: none;
+.sidebar .logo-details .logo_name {
+	color: #bab6b6;
+	font-size: 24px;
+	font-weight: 500;
 }
-.btn_tambah {
-	align-items: center;
-	justify-content: center;
-	display: flex; 
-	background-color: #2b5dff;
-	width: 20%;
-	height: 30px;
-	border-radius: 10px;
-	border: none;
-	cursor: pointer;
-	color: white;
-    text-decoration: none;
-}
-.btn_login:hover {
-	background-color: #3da2f5;
-	color: #fff;
-}
-.containter{
-	margin-left: 250px;
-}
-.jumbotron {
-	display: flex;
-	background-color: #0be7c3;
-	border-radius: 20px;
-	padding: 10px 10px 10px 20px ;
-	justify-content: center;
-	align-items: center;
+
+.sidebar .nav-links {
 	margin-top: 10px;
-	margin-bottom: 50px;
-	margin-left: 230px;
+}
+
+.sidebar .nav-links li {
+	position: relative;
+	list-style: none;
+	height: 50px;
+}
+
+.sidebar .nav-links li a {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li a.active {
+	background: #e92396; /* Warna coklat tua */
+}
+
+.sidebar .nav-links li a:hover {
+	background: #e92396; /* Warna coklat tua */
+}
+
+.sidebar .nav-links li i {
+	min-width: 60px;
+	text-align: center;
+	font-size: 18px;
+	color: #000000;
+}
+
+.sidebar .nav-links li a .links_name {
+	color: #000000;
+	font-size: 15px;
+	font-weight: 400;
+	white-space: nowrap;
+}
+
+/* main content */
+.home-section {
+	position: relative;
+	background: #e92396; /* Warna krim */
+	min-height: 100vh;
+	width: calc(100% - 240px);
+	left: 240px;
+	transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .home-section {
+	width: calc(100% - 60px);
+	left: 60px;
+}
+
+.home-section nav {
+	display: flex;
+	justify-content: space-between;
+	height: 80px;
+	background: #0d68ae; /* Warna coklat muda */
+	display: flex;
+	align-items: center;
+	position: fixed;
+	width: calc(100% - 240px);
+	left: 240px;
+	z-index: 100;
+	padding: 0 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .home-section nav {
+	left: 60px;
+	width: calc(100% - 60px);
+}
+
+.home-section nav .sidebar-button {
+	display: flex;
+	align-items: center;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+nav .sidebar-button i {
+	font-size: 35px;
+	margin-right: 10px;
+}
+
+.home-section nav .profile-details {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #faf9f9; /* Warna coklat muda */
+	border: 2px solid #BCAAA4; /* Warna coklat tua */
+	border-radius: 6px;
+	height: 50px;
+	min-width: 190px;
+}
+
+nav .profile-details .admin_name {
+	font-size: 15px;
+	font-weight: 500;
+	color: #000000;
+	white-space: nowrap;
+}
+
+.home-section .home-content {
+	position: relative;
+	padding-top: 104px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.btn {
+	background-color: #ffffff; /* Warna coklat */
+	color: rgb(0, 0, 0);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.btn a {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+
+.btn-tambah {
+	margin: 10px 0;
+}
+
+.btn-simpan {
+	width: 100%;
+}
+
+.btn:hover {
+	background-color: #ffffff; /* Warna coklat tua */
 }
 
 .table-data {
-	
 	text-align: center;
 	border-collapse: collapse;
 	width: 100%;
-	border-radius: 10px;
 }
-th {
-	border: 1px solid #080808;
-	background-color: #14e942;
-}
+
+th,
 td {
 	border: 1px solid black;
-	padding: 10px 30px;
+	padding: 5px 20px;
 }
-.card {
-	display: flex;
-	flex-direction: column;
-	width: 30%;
-    background-color: #61c0ec;
-	box-shadow: 0 6px 12px 4px rgba(0, 0, 0, 0.15);
-	border-radius: 20px;
-	padding: 5px 1px 20px 20px ;
-	text-align: justify;
-    margin: 50px 50px 30px 40px;
-    justify-content: center;
-}
+
 .form-login {
-	display: flex;  
-	flex-direction: column;
-	width: 93%;
-	background-color: rgb(32, 192, 241);
-	padding: 30px;
-	box-shadow: 0 6px 12px 4px rgba(0, 0, 0, 0.15);
-	border-radius: 10px; 
-}
-
-.card2 {
 	display: flex;
 	flex-direction: column;
-	width: 40%;
-    background-color: #f4f7f8;
-	box-shadow: 0 6px 12px 4px rgba(0, 0, 0, 0.15);
-	border-radius: 20px;
-	padding: 5px 1px 20px 20px ;
-	text-align: justify;
-    margin: 40px 50px 20px 5px;
-    justify-content: center;
-}
-
-.btn_input {
-	
-	justify-content: center;
-	display: flex; 
-	background-color: #2b5dff;
-	width: 20%;
-	height: 50%;
-	padding: 5px 5px 5px 5px;
+	align-items: center;
+	background-color: #EFEBE9; /* Warna krim */
+	padding: 30px;
+	margin: 10px auto;
 	border-radius: 10px;
-	border: none;
-	cursor: pointer;
-	color: white;
-    text-decoration: none;
-	
-}
-.btn_input:hover{
-	background-color: #3da2f5;
-	color: #fff;
 }
 
-input[type="text"] {
-	width: 90%;
-	margin: 30px;
-
+.input {
+	width: 100%;
+	margin: 10px 0;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid rgb(0, 0, 0);
 }
 
 /* Responsive Media Query */
 @media (max-width: 1240px) {
 	.sidebar {
-		width: 30%;
+		width: 60px;
 	}
 	.sidebar.active {
 		width: 220px;
+	}
+	.home-section {
+		width: calc(100% - 60px);
+		left: 60px;
+	}
+	.sidebar.active ~ .home-section {
+		overflow: hidden;
+		left: 220px;
+	}
+	.home-section nav {
+		width: calc(100% - 60px);
+		left: 60px;
+	}
+	.sidebar.active ~ .home-section nav {
+		width: calc(100% - 220px);
+		left: 220px;
+	}
+}
+
+@media (max-width: 700px) {
+	nav .profile-details {
+		display: none !important;
+	}
+	.home-section nav .profile-details {
+		height: 50px;
+		min-width: 40px;
 	}
 }
 
@@ -173,15 +251,13 @@ input[type="text"] {
 		display: none !important;
 	}
 }
+
 @media (max-width: 400px) {
 	.sidebar {
 		width: 0;
 	}
 	.sidebar.active {
 		width: 60px;
-	}
-	.btn_login{
-		width:60px
 	}
 	.home-section {
 		width: 100%;
@@ -191,9 +267,77 @@ input[type="text"] {
 		left: 60px;
 		width: calc(100% - 60px);
 	}
-
+	.home-section nav {
+		width: 100%;
+		left: 0;
+	}
 	.sidebar.active ~ .home-section nav {
 		left: 60px;
 		width: calc(100% - 60px);
 	}
+	/* Form styling */
+.motor-section form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.motor-section form input,
+.motor-section form textarea,
+.motor-section form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.motor-section form input,
+.motor-section form textarea {
+    flex: 1 1 calc(50% - 20px);
+}
+
+.motor-section form button {
+    flex: 1 1 100%;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.motor-section form button:hover {
+    background-color: #0056b3;
+}
+
+/* Table styling */
+.motor-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.motor-section table th,
+.motor-section table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.motor-section table th {
+    background-color: #f1f1f1;
+}
+
+.motor-section table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.motor-section table a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.motor-section table a:hover {
+    color: #0056b3;
+}
+
 }
